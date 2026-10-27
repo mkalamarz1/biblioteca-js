@@ -13,8 +13,24 @@ export function cadastrarLivro() {
   const categoria = prompt("Categoria: ").trim();
   const paginas = Number(prompt("Número de páginas: "));
 
-  if (!titulo || !autor || !categoria || !Number.isInteger(paginas) || paginas <= 0) {
+  if (
+    !titulo ||
+    !autor ||
+    !categoria ||
+    !Number.isInteger(paginas) ||
+    paginas <= 0
+  ) {
     console.log("Dados inválidos. Tente novamente.");
+    return;
+  }
+
+  const livroExistente = dadosLivros.find(
+    (livro) =>
+      livro.titulo.toLowerCase() === titulo.toLowerCase()
+  );
+
+  if (livroExistente) {
+    console.log("Já existe um livro cadastrado com esse título.");
     return;
   }
 
