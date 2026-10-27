@@ -1,0 +1,13 @@
+{
+  "name": "biblioteca-js",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de biblioteca em JavaScript",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
